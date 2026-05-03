@@ -1,20 +1,900 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pilsner Vertriebs GmbH</title>
-  <style>
-    body { font-family: Inter, -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f6f8fb; color: #0b1120; }
-    .card { text-align: center; padding: 48px; background: white; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); max-width: 480px; }
-    h1 { font-size: 28px; margin-bottom: 12px; }
-    p { color: #4b5563; line-height: 1.6; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pilsner Vertriebs GmbH | Unternehmensgruppe</title>
+<meta name="description" content="Pilsner Vertriebs GmbH – Unternehmen mit Schwerpunkt im Bereich erneuerbare Energien. Hauptmarke: Solar Energie Partner.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pilsner-vertrieb.de/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pilsner Vertriebs GmbH">
+<meta property="og:description" content="Unternehmensgruppe mit Schwerpunkt Photovoltaik & PPA-Stromverträge.">
+<meta property="og:url" content="https://pilsner-vertrieb.de/">
+<meta property="og:locale" content="de_DE">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Pilsner Vertriebs GmbH",
+  "url": "https://pilsner-vertrieb.de",
+  "logo": "https://pilsner-vertrieb.de/logo.png",
+  "description": "Unternehmensgruppe mit Schwerpunkt im Bereich erneuerbare Energien.",
+  "telephone": "+49-991-40227560",
+  "email": "info@pilsner-vertrieb.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Detterstraße 38",
+    "postalCode": "94469",
+    "addressLocality": "Deggendorf",
+    "addressCountry": "DE"
+  },
+  "subOrganization": [{
+    "@type": "Organization",
+    "name": "Solar Energie Partner",
+    "url": "https://solar-energie-partner.de"
+  }],
+  "owns": [
+    "https://solar-energie-partner.de",
+    "https://solar-calc.de"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-soft: #F8F9FB;
+    --bg-cool: #EFF2F7;
+    --ink: #11192C;
+    --ink-2: #495569;
+    --ink-3: #7B8597;
+    --line: #DEE3EC;
+    --line-soft: #EDF0F5;
+    --primary: #1E5BBF;
+    --primary-dark: #144291;
+    --primary-deep: #0A2B6B;
+    --primary-soft: #E2ECF8;
+    --shadow-sm: 0 1px 3px rgba(11, 25, 44, 0.05);
+    --shadow: 0 4px 16px rgba(11, 25, 44, 0.08);
+    --shadow-lg: 0 24px 48px rgba(11, 25, 44, 0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== HEADER ===== */
+  header {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--primary-deep);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    font-size: 14px;
+    color: var(--ink-2);
+    font-weight: 500;
+  }
+  .nav-links a:hover { color: var(--primary); transition: color 0.2s; }
+
+  .nav-cta {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-cta:hover { text-decoration: underline; }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 96px 0 80px;
+    background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle at 80% 20%, var(--primary-soft) 0%, transparent 60%);
+    opacity: 0.6;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--ink-2);
+    line-height: 1.65;
+    margin-bottom: 36px;
+    max-width: 520px;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+    max-width: 480px;
+  }
+  .hero-stat .num {
+    font-family: 'Source Serif 4', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat .lbl {
+    font-size: 12px;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1;
+    max-width: 460px;
+    margin-left: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80');
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(11, 25, 44, 0.6) 100%);
+  }
+  .hero-visual-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    color: #FFFFFF;
+    z-index: 2;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .hero-visual-caption strong {
+    display: block;
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  /* ===== SECTION GENERIC ===== */
+  section { position: relative; }
+  .section-header {
+    max-width: 720px;
+    margin-bottom: 56px;
+  }
+  .section-header.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .section-text {
+    font-size: 17px;
+    color: var(--ink-2);
+    line-height: 1.65;
+  }
+
+  /* ===== BRANDS / SUBORGANIZATIONS ===== */
+  .brands {
+    padding: 96px 0;
+    background: #FFFFFF;
+  }
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .brand-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+  .brand-card:hover {
+    background: #FFFFFF;
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .brand-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .brand-logo-mark {
+    width: 32px; height: 32px;
+    background: var(--primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+  .brand-domain {
+    font-size: 12px;
+    color: var(--ink-3);
+    font-weight: 500;
+    background: #FFFFFF;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .brand-card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+  .brand-card p {
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .brand-stats {
+    display: flex;
+    gap: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+  .brand-stat .num {
+    font-family: 'Source Serif 4', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .brand-stat .lbl {
+    font-size: 11px;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .brand-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .brand-cta svg { transition: transform 0.3s; }
+  .brand-card:hover .brand-cta svg { transform: translateX(4px); }
+
+  /* ===== ABOUT ===== */
+  .about {
+    padding: 96px 0;
+    background: var(--bg-soft);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-points {
+    display: grid;
+    gap: 28px;
+  }
+  .about-point {
+    display: flex;
+    gap: 20px;
+  }
+  .about-point-num {
+    font-family: 'Source Serif 4', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+  }
+  .about-point-text strong {
+    display: block;
+    font-size: 17px;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .about-point-text p {
+    font-size: 15px;
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+
+  /* ===== FACTS ===== */
+  .facts {
+    padding: 96px 0;
+    background: #FFFFFF;
+  }
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .fact-card {
+    text-align: left;
+    padding: 32px 28px;
+    background: var(--bg-soft);
+    border-radius: 16px;
+    border: 1px solid var(--line);
+  }
+  .fact-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .fact-card h4 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .fact-card p {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact {
+    padding: 96px 0;
+    background: var(--primary-deep);
+    color: #FFFFFF;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .contact h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+  }
+  .contact > div > p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    margin-bottom: 32px;
+  }
+  .contact .section-eyebrow {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .contact-info {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+  }
+  .contact-info-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .contact-info-item:last-child { border-bottom: none; }
+  .contact-info-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    flex-shrink: 0;
+  }
+  .contact-info-text strong {
+    display: block;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .contact-info-text span {
+    font-size: 15px;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+  .contact-info-text a:hover { text-decoration: underline; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 48px 0 32px;
+    background: var(--ink);
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 24px;
+  }
+  .footer-grid .logo { color: #FFFFFF; }
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-size: 13px;
+  }
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #FFFFFF; }
+  .footer-bottom {
+    font-size: 12px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 968px) {
+    .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .brands-grid, .facts-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .hero-visual { max-width: 100%; }
+  }
+  @media (max-width: 600px) {
+    .brands-grid, .facts-grid, .hero-stats { grid-template-columns: 1fr; }
+    .footer-grid { flex-direction: column; align-items: flex-start; }
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Pilsner Vertriebs GmbH</h1>
-    <p>Website wird gerade aufgebaut.</p>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="#" class="logo">
+        <span class="logo-mark">P</span>
+        <span>Pilsner Vertriebs GmbH</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#unternehmen">Unternehmen</a></li>
+        <li><a href="#marken">Marken</a></li>
+        <li><a href="#fakten">Zahlen & Fakten</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <a href="#kontakt" class="nav-cta">
+        Kontakt aufnehmen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+      </a>
+    </nav>
   </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="fade-up">
+        <span class="hero-eyebrow">Pilsner Vertriebs GmbH</span>
+        <h1>Ein Unternehmen mit klarem Fokus auf <em>erneuerbare Energien</em>.</h1>
+        <p>Wir entwickeln, bauen und betreiben Lösungen für die dezentrale Energieversorgung von morgen. Operativ tätig sind wir über unsere Marken – mit eingespielten Teams, eigener Infrastruktur und langjähriger Branchenerfahrung.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">600+</div>
+            <div class="lbl">Realisierte Projekte</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">50+</div>
+            <div class="lbl">MWp installiert</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">2 Marken</div>
+            <div class="lbl">unter einem Dach</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up">
+        <div class="hero-visual-caption">
+          <strong>Hauptsitz Deggendorf, Bayern</strong>
+          <span>Bundesweit aktiv im Bereich Photovoltaik & PPA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== UNTERNEHMEN / ABOUT ===== -->
+<section class="about" id="unternehmen">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up">
+        <span class="section-eyebrow">Über uns</span>
+        <h2 class="section-title">Wer wir sind. Wofür wir stehen.</h2>
+        <p class="section-text">Die Pilsner Vertriebs GmbH bündelt unter ihrem Dach mehrere operative Marken im Bereich erneuerbare Energien. Wir verstehen uns als langfristig denkendes mittelständisches Unternehmen – ohne Investorendruck, ohne Quartalslogik, mit voller Verantwortung gegenüber Kunden, Mitarbeitenden und Partnern.</p>
+      </div>
+      <div class="about-points fade-up">
+        <div class="about-point">
+          <div class="about-point-num">01</div>
+          <div class="about-point-text">
+            <strong>Inhabergeführt und unabhängig</strong>
+            <p>Keine externen Anteilseigner, keine Konzernstrukturen. Entscheidungen treffen wir kurz und nachvollziehbar.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-num">02</div>
+          <div class="about-point-text">
+            <strong>Operativ statt nur verwaltend</strong>
+            <p>Wir sind keine Holding, die nur Anteile hält. Unsere Geschäftsführung kennt jedes Projekt und jeden Standort.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-num">03</div>
+          <div class="about-point-text">
+            <strong>Kapital für PPA-Geschäfte</strong>
+            <p>Wir verfügen über die finanzielle Substanz, um auch größere PPA-Vorhaben aus eigener Kraft zu realisieren.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-num">04</div>
+          <div class="about-point-text">
+            <strong>Langfristige Partnerschaften</strong>
+            <p>Unsere Verträge laufen 20 Jahre und länger. Wir sind morgen noch da – das zählt für Banken, Kunden und Mitarbeiter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARKEN ===== -->
+<section class="brands" id="marken">
+  <div class="container">
+    <div class="section-header center fade-up">
+      <span class="section-eyebrow">Unsere Marken</span>
+      <h2 class="section-title">Operative Geschäftsbereiche</h2>
+      <p class="section-text">Unter dem Dach der Pilsner Vertriebs GmbH agieren spezialisierte Marken mit jeweils eigenem Marktauftritt und klarer Positionierung.</p>
+    </div>
+    <div class="brands-grid">
+      <a href="https://solar-energie-partner.de" class="brand-card fade-up">
+        <div class="brand-header">
+          <div class="brand-logo">
+            <div class="brand-logo-mark">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <span>Solar Energie Partner</span>
+          </div>
+          <span class="brand-domain">solar-energie-partner.de</span>
+        </div>
+        <h3>Photovoltaik & PPA-Stromverträge</h3>
+        <p>Unsere Hauptmarke im Bereich Photovoltaik. Wir planen, bauen und betreiben Solaranlagen für Privat- und Geschäftskunden – mit oder ohne Eigeninvestition. Spezialisierung auf gewerbliche PPA-Modelle.</p>
+        <div class="brand-stats">
+          <div class="brand-stat">
+            <div class="num">600+</div>
+            <div class="lbl">Anlagen</div>
+          </div>
+          <div class="brand-stat">
+            <div class="num">4.9★</div>
+            <div class="lbl">Bewertung</div>
+          </div>
+          <div class="brand-stat">
+            <div class="num">B2B + B2C</div>
+            <div class="lbl">Zielgruppen</div>
+          </div>
+        </div>
+        <span class="brand-cta">
+          Zur Marken-Website
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </span>
+      </a>
+      <a href="https://solar-calc.de" class="brand-card fade-up">
+        <div class="brand-header">
+          <div class="brand-logo">
+            <div class="brand-logo-mark" style="background: #F2A813; color: #11192C;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <span>Solar Calc</span>
+          </div>
+          <span class="brand-domain">solar-calc.de</span>
+        </div>
+        <h3>Online-Rechner für Solar & PPA</h3>
+        <p>Unser digitales Tool zur Berechnung von Wirtschaftlichkeit, Eigenverbrauch und PPA-Vorteilen. Frei zugänglich für Privatpersonen und Unternehmen, die ihre Solar-Investition oder einen Stromvertrag transparent durchrechnen möchten.</p>
+        <div class="brand-stats">
+          <div class="brand-stat">
+            <div class="num">Frei</div>
+            <div class="lbl">Nutzbar</div>
+          </div>
+          <div class="brand-stat">
+            <div class="num">PPA</div>
+            <div class="lbl">Spezialisiert</div>
+          </div>
+          <div class="brand-stat">
+            <div class="num">Online</div>
+            <div class="lbl">24/7</div>
+          </div>
+        </div>
+        <span class="brand-cta">
+          Zum Online-Rechner
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAKTEN ===== -->
+<section class="facts" id="fakten">
+  <div class="container">
+    <div class="section-header center fade-up">
+      <span class="section-eyebrow">Zahlen & Fakten</span>
+      <h2 class="section-title">Das Unternehmen in Kürze</h2>
+    </div>
+    <div class="facts-grid">
+      <div class="fact-card fade-up">
+        <div class="fact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+        </div>
+        <h4>Rechtsform</h4>
+        <p>Gesellschaft mit beschränkter Haftung, eingetragen im Handelsregister.</p>
+      </div>
+      <div class="fact-card fade-up">
+        <div class="fact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h4>Hauptsitz</h4>
+        <p>Deggendorf, Bayern. Bundesweite Projekttätigkeit über alle Marken hinweg.</p>
+      </div>
+      <div class="fact-card fade-up">
+        <div class="fact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h4>Eigenes Team</h4>
+        <p>Festangestellte Monteure, Elektriker, Berater. Keine Subunternehmer.</p>
+      </div>
+      <div class="fact-card fade-up">
+        <div class="fact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4>Branchenfokus</h4>
+        <p>Photovoltaik, Energiespeicher, PPA-Modelle und Energiemanagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="contact" id="kontakt">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <span class="section-eyebrow">Kontakt</span>
+        <h2>Sie wollen mit uns sprechen?</h2>
+        <p>Für unternehmerische Anfragen, Partnerschaften, Investorenkommunikation oder Karrierethemen erreichen Sie uns direkt. Für Anfragen rund um Photovoltaik-Projekte wenden Sie sich bitte an unsere operative Marke Solar Energie Partner.</p>
+        <a href="https://solar-energie-partner.de" class="brand-cta" style="color: #F2A813; font-size: 15px;">
+          Zu Solar Energie Partner
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="contact-info fade-up">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-info-text">
+            <strong>Adresse</strong>
+            <span>Detterstraße 38<br>94469 Deggendorf</span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-info-text">
+            <strong>Telefon</strong>
+            <span><a href="tel:+4999140227560">+49 991 40227560</a></span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-info-text">
+            <strong>E-Mail</strong>
+            <span><a href="mailto:info@pilsner-vertrieb.de">info@pilsner-vertrieb.de</a></span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 11l3 3 8-8"/></svg>
+          </div>
+          <div class="contact-info-text">
+            <strong>Handelsregister</strong>
+            <span>HRB 6296, Amtsgericht Deggendorf</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="logo">
+        <span class="logo-mark">P</span>
+        <span>Pilsner Vertriebs GmbH</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://solar-energie-partner.de">Solar Energie Partner</a>
+        <a href="https://solar-calc.de">Solar Calc</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Pilsner Vertriebs GmbH · Alle Rechte vorbehalten
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
 </body>
 </html>
