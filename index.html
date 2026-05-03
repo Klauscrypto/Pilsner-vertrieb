@@ -136,6 +136,44 @@
   }
   .nav-cta:hover { text-decoration: underline; }
 
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    background: #FFFFFF;
+    border-top: 1px solid var(--line);
+    padding: 16px 0 24px;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul { list-style: none; }
+  .mobile-menu ul li a {
+    display: block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+  .mobile-menu ul li a:hover { color: var(--primary); }
+
   /* ===== HERO ===== */
   .hero {
     padding: 96px 0 80px;
@@ -583,6 +621,8 @@
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     .brands-grid, .facts-grid { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
     .hero-visual { max-width: 100%; }
   }
   @media (max-width: 600px) {
@@ -611,7 +651,18 @@
         Kontakt aufnehmen
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
       </a>
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#unternehmen" onclick="closeMobile()">Unternehmen</a></li>
+      <li><a href="#marken" onclick="closeMobile()">Marken</a></li>
+      <li><a href="#fakten" onclick="closeMobile()">Zahlen & Fakten</a></li>
+      <li><a href="#kontakt" onclick="closeMobile()">Kontakt</a></li>
+    </ul>
   </div>
 </header>
 
@@ -873,9 +924,8 @@
         <a href="https://solar-energie-partner.de">Solar Energie Partner</a>
         <a href="https://solar-calc.de">Solar Calc</a>
         <a href="#kontakt">Kontakt</a>
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">AGB</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -894,6 +944,17 @@
     });
   }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
 </script>
 
 </body>
