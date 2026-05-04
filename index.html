@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pilsner Vertriebs GmbH | Erneuerbare Energien</title>
+<link rel="icon" type="image/png" href="/logo-icon.png">
 <meta name="description" content="Pilsner Vertriebs GmbH – Ihr Partner für Photovoltaik, PPA-Stromverträge und erneuerbare Energien. Inhabergeführt, bundesweit aktiv.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://pilsner-vertrieb.de/">
@@ -115,13 +116,10 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 11px;
-  font-weight: 700;
-  font-size: 17px;
-  color: var(--ink);
-  letter-spacing: -.01em;
   flex-shrink: 0;
+  text-decoration: none;
 }
+.logo img { height: 42px; width: auto; display: block; }
 .logo-mark {
   width: 38px; height: 38px;
   background: var(--blue-deep);
@@ -766,8 +764,7 @@ footer {
   <div class="container">
     <nav class="nav">
       <a href="/" class="logo">
-        <span class="logo-mark">P</span>
-        Pilsner Vertriebs GmbH
+        <img src="/logo.png" alt="Pilsner Vertriebs GmbH">
       </a>
       <ul class="nav-links">
         <li><a href="#leistungen">Leistungen</a></li>
@@ -1140,10 +1137,9 @@ footer {
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo">
-          <span class="logo-mark">P</span>
-          Pilsner Vertriebs GmbH
-        </div>
+        <a href="/" class="logo" style="margin-bottom:12px;">
+          <img src="/logo.png" alt="Pilsner Vertriebs GmbH" style="height:38px;filter:brightness(0) invert(1);">
+        </a>
         <p>Erneuerbare Energien für Privat- und Geschäftskunden. Inhabergeführt seit 2018.</p>
       </div>
       <div class="footer-links-group">
