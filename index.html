@@ -387,7 +387,7 @@ header {
 }
 .brands-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   margin-top: 56px;
 }
@@ -426,6 +426,7 @@ header {
 }
 .brand-card-blue .brand-tag { background: rgba(255,255,255,.15); color: rgba(255,255,255,.85); }
 .brand-card-light .brand-tag { background: var(--blue-soft); color: var(--blue); }
+.brand-card-amber .brand-tag { background: #FEF3C7; color: #92400E; }
 .brand-card h3 {
   font-family: 'Source Serif 4', serif;
   font-size: 32px;
@@ -441,6 +442,7 @@ header {
 }
 .brand-card-blue p { color: rgba(255,255,255,.75); }
 .brand-card-light p { color: var(--ink-2); }
+.brand-card-amber p { color: var(--ink-2); }
 .brand-stats-row {
   display: flex;
   gap: 28px;
@@ -458,6 +460,7 @@ header {
 }
 .brand-card-blue .snum { color: #fff; }
 .brand-card-light .snum { color: var(--blue); }
+.brand-card-amber .snum { color: #92400E; }
 .brand-stat-item .slbl {
   font-size: 11px;
   font-weight: 600;
@@ -466,6 +469,7 @@ header {
 }
 .brand-card-blue .slbl { color: rgba(255,255,255,.5); }
 .brand-card-light .slbl { color: var(--ink-3); }
+.brand-card-amber .slbl { color: var(--ink-3); }
 .brand-link {
   display: inline-flex;
   align-items: center;
@@ -476,6 +480,7 @@ header {
 }
 .brand-card-blue .brand-link { color: var(--amber); }
 .brand-card-light .brand-link { color: var(--blue); }
+.brand-card-amber .brand-link { color: #92400E; }
 .brand-link svg { transition: transform .25s; }
 .brand-card:hover .brand-link svg { transform: translateX(5px); }
 
@@ -725,6 +730,7 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
+  .brands-layout { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
   .process-grid::before { display: none; }
@@ -735,6 +741,7 @@ footer {
   .hamburger { display: flex; }
   .hero { padding: 72px 0 60px; }
   .brands-layout { grid-template-columns: 1fr; }
+  .brands-layout .brand-card { padding: 32px 24px; }
   .brand-card { padding: 32px 28px; }
   .services-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
@@ -891,21 +898,21 @@ footer {
   <div class="container">
     <div class="fade-up" style="max-width:560px;">
       <div class="section-label">Unsere Marken</div>
-      <h2 class="section-title">Zwei Marken.<br>Ein Ziel.</h2>
-      <p class="section-sub">Unter dem Dach der Pilsner Vertriebs GmbH agieren spezialisierte Marken mit eigenem Marktauftritt – jede führend in ihrem Bereich.</p>
+      <h2 class="section-title">Drei Bereiche.<br>Ein Unternehmen.</h2>
+      <p class="section-sub">Unter dem Dach der Pilsner Vertriebs GmbH agieren spezialisierte Geschäftsbereiche – von der schlüsselfertigen Installation bis zum digitalen Tool.</p>
     </div>
     <div class="brands-layout">
       <a href="https://solar-energie-partner.de" class="brand-card brand-card-blue fade-up">
         <div class="brand-tag">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          Hauptmarke
+          PPA & Solar
         </div>
         <h3>Solar Energie Partner</h3>
-        <p>Die operative Marke für Photovoltaik und PPA-Stromverträge. Wir planen, bauen und betreiben Solaranlagen für Privat- und Geschäftskunden – bundesweit, mit eigenem Team.</p>
+        <p>Die Hauptmarke für PPA-Stromverträge und Solaranlagen im Gewerbe. Wir entwickeln, finanzieren und betreiben Photovoltaik-Projekte für Unternehmen – bundesweit.</p>
         <div class="brand-stats-row">
           <div class="brand-stat-item">
             <div class="snum">600+</div>
-            <div class="slbl">Anlagen</div>
+            <div class="slbl">Projekte</div>
           </div>
           <div class="brand-stat-item">
             <div class="snum">4.9★</div>
@@ -917,7 +924,33 @@ footer {
           </div>
         </div>
         <span class="brand-link">
-          solar-energie-partner.de besuchen
+          solar-energie-partner.de
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </span>
+      </a>
+      <a href="https://solar-energie-partner.de" class="brand-card brand-card-amber fade-up" style="background:#FFFBEB;border:1.5px solid #FDE68A;">
+        <div class="brand-tag">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          Direktvertrieb
+        </div>
+        <h3>PV & Wärme­pumpen</h3>
+        <p>Verkauf und Installation von Photovoltaik-Anlagen und Wärmepumpen für Privathaushalte und Gewerbe – schlüsselfertig, mit eigenem Montage-Team, aus einer Hand.</p>
+        <div class="brand-stats-row">
+          <div class="brand-stat-item">
+            <div class="snum">Privat</div>
+            <div class="slbl">& Gewerbe</div>
+          </div>
+          <div class="brand-stat-item">
+            <div class="snum">Eigenes</div>
+            <div class="slbl">Montageteam</div>
+          </div>
+          <div class="brand-stat-item">
+            <div class="snum">1 Hand</div>
+            <div class="slbl">Alles aus</div>
+          </div>
+        </div>
+        <span class="brand-link">
+          Anfrage stellen
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
         </span>
       </a>
@@ -943,7 +976,7 @@ footer {
           </div>
         </div>
         <span class="brand-link">
-          solar-calc.de besuchen
+          solar-calc.de
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
         </span>
       </a>
