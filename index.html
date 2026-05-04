@@ -583,70 +583,94 @@ header {
   line-height: 1.4;
 }
 
-/* ── CONTACT CTA ── */
-.cta-section {
-  padding: 100px 0;
-  background: var(--blue-deep);
-  position: relative;
-  overflow: hidden;
+/* ── CONTACT SECTION ── */
+.contact-section { padding: 100px 0; background: var(--bg-soft); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
 }
-.cta-section::before {
-  content: "";
-  position: absolute;
-  top: -150px; right: -150px;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(255,255,255,.06) 0%, transparent 65%);
-}
-.cta-section::after {
-  content: "";
-  position: absolute;
-  bottom: -100px; left: -100px;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(245,158,11,.08) 0%, transparent 65%);
-}
-.cta-inner {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.cta-inner .section-label { justify-content: center; color: rgba(255,255,255,.6); }
-.cta-inner .section-label::before { background: rgba(255,255,255,.4); }
-.cta-inner h2 {
-  font-family: 'Source Serif 4', serif;
-  font-size: clamp(32px, 4vw, 50px);
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: -.02em;
-  line-height: 1.12;
-  margin-bottom: 20px;
-}
-.cta-inner p {
-  font-size: 17px;
-  color: rgba(255,255,255,.7);
+.contact-info .section-title { margin-bottom: 16px; }
+.contact-info .section-title em { font-style: italic; color: var(--blue); }
+.contact-info > p {
+  font-size: 16px;
+  color: var(--ink-2);
+  margin-bottom: 32px;
   line-height: 1.65;
-  margin-bottom: 40px;
 }
-.cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.cta-info {
+.contact-methods { display: flex; flex-direction: column; gap: 12px; }
+.contact-method {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 48px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,.1);
-  flex-wrap: wrap;
+  gap: 16px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: all .2s;
+  text-decoration: none;
+  color: inherit;
 }
-.cta-info-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255,255,255,.75);
-  font-size: 14px;
+.contact-method:hover { background: var(--blue-soft); border-color: var(--blue); transform: translateX(4px); }
+.contact-method-icon {
+  width: 44px; height: 44px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue);
+  flex-shrink: 0;
 }
-.cta-info-item svg { opacity: .6; flex-shrink: 0; }
+.contact-method-text strong {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 2px;
+}
+.contact-method-text span { font-size: 15px; color: var(--ink); font-weight: 600; }
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-field label {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-2);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  transition: border-color .2s;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { outline: none; border-color: var(--blue); }
+.form-field textarea { min-height: 100px; resize: vertical; }
+.form-submit {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .22s;
+  font-family: inherit;
+}
+.form-submit:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,86,219,.3); }
+.form-note { font-size: 12px; color: var(--ink-3); text-align: center; }
 
 /* ── FOOTER ── */
 footer {
@@ -715,6 +739,8 @@ footer {
   .services-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .facts-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
   .footer-top { flex-direction: column; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
@@ -993,37 +1019,85 @@ footer {
   </div>
 </section>
 
-<!-- KONTAKT CTA -->
-<section class="cta-section" id="kontakt">
+<!-- KONTAKT -->
+<section class="contact-section" id="kontakt">
   <div class="container">
-    <div class="cta-inner fade-up">
-      <div class="section-label">Kontakt</div>
-      <h2>Bereit für Ihr Solar-Projekt?</h2>
-      <p>Sprechen Sie direkt mit uns. Für Projektanfragen, Partnerschaften oder allgemeine Fragen – wir melden uns innerhalb von 24 Stunden.</p>
-      <div class="cta-actions">
-        <a href="mailto:info@pilsner-vertrieb.de" class="btn btn-white">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          info@pilsner-vertrieb.de
-        </a>
-        <a href="tel:+4999140227560" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.25);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.69 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +49 991 40227560
-        </a>
+    <div class="contact-grid fade-up">
+      <div class="contact-info">
+        <div class="section-label">Kontakt</div>
+        <h2 class="section-title">Lassen Sie uns <em>kurz reden.</em></h2>
+        <p>Ein Erstgespräch dauert meist 20 bis 40 Minuten. Sie erfahren konkrete Zahlen für Ihre Situation und ob sich ein Projekt lohnt – oder eher nicht. Beides ist okay.</p>
+        <div class="contact-methods">
+          <a href="tel:+4999140227560" class="contact-method">
+            <span class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <div class="contact-method-text">
+              <strong>Anrufen</strong>
+              <span>+49 991 40227560</span>
+            </div>
+          </a>
+          <a href="mailto:info@pilsner-vertrieb.de" class="contact-method">
+            <span class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <div class="contact-method-text">
+              <strong>Mailen</strong>
+              <span>info@pilsner-vertrieb.de</span>
+            </div>
+          </a>
+          <div class="contact-method">
+            <span class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div class="contact-method-text">
+              <strong>Vorbeikommen</strong>
+              <span>Detterstraße 38, 94469 Deggendorf</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="cta-info">
-        <div class="cta-info-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Detterstraße 38, 94469 Deggendorf
+
+      <form class="contact-form" onsubmit="event.preventDefault(); this.innerHTML='<div style=\'text-align:center;padding:40px 0\'><svg width=\'48\' height=\'48\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'#1A56DB\' stroke-width=\'2\'><path d=\'M22 11.08V12a10 10 0 1 1-5.93-9.14\'/><polyline points=\'22 4 12 14.01 9 11.01\'/></svg><h3 style=\'margin-top:16px;font-family:Source Serif 4,serif;font-size:22px\'>Vielen Dank!</h3><p style=\'color:#475569;margin-top:8px\'>Wir melden uns innerhalb von 24 Stunden.</p></div>';">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Vorname</label>
+            <input type="text" placeholder="Max" required>
+          </div>
+          <div class="form-field">
+            <label>Nachname</label>
+            <input type="text" placeholder="Mustermann" required>
+          </div>
         </div>
-        <div class="cta-info-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 11l3 3 8-8"/></svg>
-          HRB 6296 · Amtsgericht Deggendorf
+        <div class="form-field">
+          <label>E-Mail</label>
+          <input type="email" placeholder="max@beispiel.de" required>
         </div>
-        <div class="cta-info-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-          GF: Doris Pilsner-Albrecht
+        <div class="form-field">
+          <label>Telefon (optional)</label>
+          <input type="tel" placeholder="+49 ...">
         </div>
-      </div>
+        <div class="form-field">
+          <label>Wofür interessieren Sie sich?</label>
+          <select required>
+            <option value="">Bitte wählen…</option>
+            <option>Solaranlage für Eigenheim</option>
+            <option>Anlage mit Speicher</option>
+            <option>PPA-Stromvertrag (Gewerbe)</option>
+            <option>Wärmepumpe</option>
+            <option>Wallbox / Ladestation</option>
+            <option>Komplettlösung mit allem</option>
+            <option>Partnerschaft / Kooperation</option>
+            <option>Etwas anderes</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Worum geht es konkret? (optional)</label>
+          <textarea placeholder="Stichwörter zum Projekt, Dachgröße, Verbrauch o.ä."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Anfrage absenden →</button>
+        <div class="form-note">Wir antworten innerhalb von 24 Stunden · keine Verkaufsfalle</div>
+      </form>
     </div>
   </div>
 </section>
