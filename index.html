@@ -15,76 +15,57 @@
   font-display: swap;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; }
 body {
   font-family: 'Inter', -apple-system, sans-serif;
   background: #F8F9FB;
   color: #11192C;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
   padding: 24px;
   -webkit-font-smoothing: antialiased;
 }
-.logo { margin-bottom: 40px; }
-.logo img { height: 80px; width: auto; }
-h1 {
-  font-size: clamp(20px, 4vw, 28px);
-  font-weight: 600;
-  color: #11192C;
-  margin-bottom: 12px;
-}
-p {
+.card {
+  background: #fff;
+  border: 1px solid #DEE3EC;
+  border-radius: 8px;
+  padding: 40px 48px;
+  line-height: 1.8;
   font-size: 15px;
   color: #495569;
-  line-height: 1.7;
-  max-width: 420px;
-  margin-bottom: 8px;
+}
+.card strong {
+  display: block;
+  color: #11192C;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.card .divider {
+  border: none;
+  border-top: 1px solid #DEE3EC;
+  margin: 20px 0;
 }
 a { color: #1E5BBF; text-decoration: none; }
 a:hover { text-decoration: underline; }
-.divider {
-  width: 48px;
-  height: 2px;
-  background: #1E5BBF;
-  border-radius: 2px;
-  margin: 32px auto;
-}
-footer {
-  position: fixed;
-  bottom: 24px;
-  font-size: 12px;
-  color: #7B8597;
-}
-footer a { color: #7B8597; }
-footer a:hover { color: #1E5BBF; }
+.links { margin-top: 20px; font-size: 14px; }
+.links a { margin-right: 16px; }
 </style>
 </head>
 <body>
 
-<div class="logo">
-  <img src="/logo.png" alt="Pilsner Vertriebs GmbH">
+<div class="card">
+  <strong>Pilsner Vertriebs GmbH</strong>
+  Detterstraße 38<br>
+  94469 Deggendorf
+  <hr class="divider">
+  E-Mail: <a href="mailto:info@pilsner-vertrieb.de">info@pilsner-vertrieb.de</a>
+  <div class="links">
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutzerklärung</a>
+  </div>
 </div>
-
-<h1>Website im Aufbau</h1>
-<p>Wir arbeiten gerade an unserem neuen Internetauftritt.<br>In Kürze sind wir wieder für Sie da.</p>
-
-<div class="divider"></div>
-
-<p>
-  <strong>Pilsner Vertriebs GmbH</strong><br>
-  Detterstraße 38 · 94469 Deggendorf<br>
-  <a href="mailto:info@pilsner-vertrieb.de">info@pilsner-vertrieb.de</a><br>
-  <a href="tel:+4999140227560">+49 991 40227560</a>
-</p>
-
-<footer>
-  <a href="/impressum.html">Impressum</a> &nbsp;·&nbsp;
-  <a href="/datenschutz.html">Datenschutz</a>
-</footer>
 
 </body>
 </html>
