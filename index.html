@@ -3,301 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pilsner Vertriebs GmbH – Wärmepumpe &amp; Photovoltaik in Bayern</title>
-<meta name="description" content="Pilsner Vertriebs GmbH aus Deggendorf: persönliche Beratung zu Wärmepumpe und Photovoltaik – umgesetzt mit erfahrenen Fachbetrieben aus der Region.">
-<link rel="icon" type="image/png" href="/logo-icon.png">
+<title>Pilsner Vertriebs GmbH – Seite in Bearbeitung</title>
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="/logo-icon.png">
 <style>
-@font-face { font-family: 'Inter'; src: url('/fonts/inter.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Source Serif 4'; src: url('/fonts/sourceserif4.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
-:root {
-  --bg: #FFFFFF; --bg-soft: #F8F9FB; --ink: #11192C; --ink-2: #495569; --ink-3: #6B7486;
-  --line: #DEE3EC; --primary: #1E5BBF; --primary-deep: #0A2B6B; --primary-bg: #EAF1FC;
-  --shadow: 0 4px 16px rgba(11, 25, 44, 0.08);
-}
+@font-face { font-family: 'Inter'; src: url('/fonts/inter.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Source Serif 4'; src: url('/fonts/sourceserif4.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-a { color: var(--primary); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-
-header { background: #FFFFFF; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
-.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
-.logo img { height: 46px; width: auto; display: block; }
-.nav-links { display: flex; align-items: center; gap: 22px; font-size: 14px; font-weight: 500; }
-.nav-links a { color: var(--ink-2); }
-.nav-links a.btn { color: #fff; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 15px; }
-.btn:hover { text-decoration: none; }
-.btn-primary { background: var(--primary); color: #fff; }
-.btn-primary:hover { background: var(--primary-deep); }
-.btn-ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
-.btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
-
-.hero { background: var(--bg-soft); border-bottom: 1px solid var(--line); padding: 80px 0 72px; }
-.eyebrow { display: inline-block; font-size: 12px; color: var(--primary); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
-.hero h1 { font-family: 'Source Serif 4', serif; font-size: clamp(34px, 5vw, 56px); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; max-width: 780px; }
-.hero p { font-size: clamp(16px, 2vw, 19px); color: var(--ink-2); max-width: 640px; margin: 20px 0 30px; }
-.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; }
-
-section.block { padding: 80px 0; }
-section.block.soft { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.block h2 { font-family: 'Source Serif 4', serif; font-size: clamp(28px, 3.4vw, 38px); font-weight: 500; letter-spacing: -0.015em; line-height: 1.15; margin-bottom: 12px; }
-.block .lead { color: var(--ink-2); max-width: 640px; margin-bottom: 36px; font-size: 16px; }
-
-.schritte { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.schritt { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 26px; }
-.schritt .nr { width: 36px; height: 36px; border-radius: 50%; background: var(--primary-bg); color: var(--primary); font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-.schritt h3 { font-size: 17px; font-weight: 650; margin-bottom: 6px; }
-.schritt p { color: var(--ink-2); font-size: 15px; }
-
-.partner { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.karte { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow); }
-.karte .tag { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
-.karte h3 { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 600; }
-.karte p { color: var(--ink-2); font-size: 15px; flex: 1; }
-.karte a.mehr { font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; min-height: 44px; }
-
-.kontakt { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
-.kontakt-liste { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 8px 26px; }
-.kontakt-liste div { padding: 16px 0; border-bottom: 1px solid var(--line); }
-.kontakt-liste div:last-child { border-bottom: none; }
-.kontakt-liste span { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
-.kontakt-liste a, .kontakt-liste b { font-size: 17px; font-weight: 600; color: var(--ink); }
-
-.digital { margin-top: 28px; font-size: 15px; color: var(--ink-2); }
-
-.produkte { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-.produkt { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
-.produkt .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--primary-bg); color: var(--primary); display: flex; align-items: center; justify-content: center; }
-.produkt h3 { font-size: 18px; font-weight: 650; }
-.produkt p { color: var(--ink-2); font-size: 15px; flex: 1; }
-.produkt a { font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; }
-
-.hersteller { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.hersteller .gruppe { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; }
-.hersteller h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
-.hersteller ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-.hersteller li { border: 1px solid var(--line); background: var(--bg-soft); border-radius: 999px; padding: 6px 13px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
-.hinweis { margin-top: 16px; font-size: 13px; color: var(--ink-3); max-width: 720px; }
-
-form.anfrage { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; box-shadow: var(--shadow); }
-form.anfrage .voll { grid-column: 1 / -1; }
-form.anfrage label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
-form.anfrage input, form.anfrage select, form.anfrage textarea { font: inherit; font-size: 16px; font-weight: 400; color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; background: #fff; min-height: 46px; }
-form.anfrage textarea { min-height: 110px; resize: vertical; }
-form.anfrage input:focus, form.anfrage select:focus, form.anfrage textarea:focus { outline: 2px solid var(--primary); outline-offset: 1px; border-color: var(--primary); }
-form.anfrage .check { flex-direction: row; align-items: flex-start; gap: 10px; font-weight: 400; font-size: 14px; }
-form.anfrage .check input { min-height: 0; width: 20px; height: 20px; margin-top: 2px; flex: none; }
-form.anfrage .hp { position: absolute; left: -9999px; }
-form.anfrage button { border: none; cursor: pointer; font: inherit; font-weight: 600; }
-.meldung { font-size: 15px; font-weight: 500; }
-.meldung.ok { color: #1B7A43; } .meldung.fehler { color: #B42318; }
-.kontakt-klein { margin-top: 24px; }
-
-footer { padding: 32px 0; background: var(--ink); color: rgba(255,255,255,0.55); text-align: center; font-size: 13px; line-height: 2; }
-footer a { color: rgba(255,255,255,0.75); }
-footer a:hover { color: #fff; }
-
-@media (max-width: 1080px) and (min-width: 861px) { .produkte { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 860px) {
-  .schritte, .partner, .kontakt, .produkte, form.anfrage, .hersteller { grid-template-columns: 1fr; }
-  .nav-links a:not(.btn) { display: none; }
-  .hero { padding: 56px 0 52px; }
-  section.block { padding: 56px 0; }
-}
+body { font-family: 'Inter', -apple-system, sans-serif; background: #F8F9FB; color: #11192C; min-height: 100vh; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; }
+main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 16px; }
+.box { background: #fff; border: 1px solid #DEE3EC; border-radius: 16px; padding: 40px 32px; max-width: 520px; width: 100%; text-align: center; box-shadow: 0 4px 16px rgba(11,25,44,0.08); }
+.box img { width: 220px; max-width: 100%; height: auto; margin-bottom: 28px; }
+h1 { font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 32px; letter-spacing: -0.015em; margin-bottom: 12px; }
+p { color: #495569; font-size: 16px; line-height: 1.6; }
+.kontakt { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+.kontakt a { color: #1E5BBF; font-weight: 600; text-decoration: none; font-size: 17px; }
+footer { text-align: center; padding: 20px 16px; font-size: 13px; color: #6B7486; }
+footer a { color: #495569; }
 </style>
-<script src="/analytics.js" defer data-ga="G-89J64Q8GCC" data-umami="9f91da85-3f68-4aed-b9dc-4f5c219498a5" data-umami-src="https://stats.pilsner-vertrieb.de/script.js" data-privacy="/datenschutz.html" data-accent="#1E5BBF"></script>
 </head>
 <body>
-
-<header>
-  <div class="container">
-    <nav class="nav" aria-label="Hauptnavigation">
-      <a href="/" class="logo"><img src="/logo-breit.png" alt="Pilsner Vertriebs GmbH" width="1200" height="259"></a>
-      <div class="nav-links">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#ablauf">So arbeiten wir</a>
-        <a href="#partner">Partner</a>
-        <a href="#kontakt" class="btn btn-primary">Anfrage stellen</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
 <main>
-  <section class="hero">
-    <div class="container">
-      <span class="eyebrow">Wärmepumpe &amp; Photovoltaik · Bayern</span>
-      <h1>Die passende Energielösung für Ihr Haus – persönlich beraten.</h1>
-      <p>Die Pilsner Vertriebs GmbH aus Deggendorf berät Hausbesitzer zu Wärmepumpe und Photovoltaik und bringt sie mit erfahrenen Fachbetrieben aus der Region zusammen.</p>
-      <div class="cta">
-        <a href="#kontakt" class="btn btn-primary">Kostenlos anfragen</a>
-        <a href="tel:+4999140227560" class="btn btn-ghost">Anrufen: 0991 40227560</a>
-      </div>
+  <div class="box">
+    <img src="/logo-breit.png" alt="Pilsner Vertriebs GmbH" width="1200" height="259">
+    <h1>Seite in Bearbeitung</h1>
+    <p>Unsere Website wird gerade überarbeitet. Sie erreichen uns wie gewohnt:</p>
+    <div class="kontakt">
+      <a href="tel:+4999140227560">0991 40227560</a>
+      <a href="mailto:info@pilsner-vertrieb.de">info@pilsner-vertrieb.de</a>
     </div>
-  </section>
-
-  <section class="block" id="leistungen">
-    <div class="container">
-      <span class="eyebrow">Leistungen</span>
-      <h2>Wobei wir Sie beraten</h2>
-      <p class="lead">Ob einzeln oder kombiniert – wir schauen, was zu Ihrem Haus und Ihrem Verbrauch passt.</p>
-      <div class="produkte">
-        <div class="produkt">
-          <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="12" r="4"/><path d="M12 8v1M12 15v1M8 12h1M15 12h1"/></svg></div>
-          <h3>Wärmepumpe</h3>
-          <p>Heizen ohne Öl und Gas: Wir prüfen, ob Ihr Haus geeignet ist, und rechnen Größe und Betriebskosten durch.</p>
-          <a href="#kontakt">Beratung anfragen →</a>
-        </div>
-        <div class="produkt">
-          <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18L18 8H6z"/><path d="M4.5 14h15M9 8l-1 12M15 8l1 12"/><path d="M12 2v2M5 4l1.5 1.5M19 4l-1.5 1.5"/></svg></div>
-          <h3>Photovoltaik</h3>
-          <p>Strom vom eigenen Dach: Planung der Anlage passend zu Dachfläche, Ausrichtung und Ihrem Verbrauch.</p>
-          <a href="#kontakt">Beratung anfragen →</a>
-        </div>
-        <div class="produkt">
-          <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M10 2h4"/><path d="M13 8l-3 5h4l-3 5"/></svg></div>
-          <h3>Speicher &amp; Wallbox</h3>
-          <p>Mehr vom eigenen Strom selbst nutzen – für den Abend oder zum Laden des Elektroautos.</p>
-          <a href="#kontakt">Beratung anfragen →</a>
-        </div>
-        <div class="produkt">
-          <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16M6 10v8M10 10v8M14 10v8M18 10v8M3 21h18M12 3l9 5H3z"/></svg></div>
-          <h3>Förderung</h3>
-          <p>Wir zeigen Ihnen, welche Förderprogramme für Ihr Vorhaben infrage kommen und was dafür zu tun ist.</p>
-          <a href="#kontakt">Beratung anfragen →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="ablauf">
-    <div class="container">
-      <span class="eyebrow">So arbeiten wir</span>
-      <h2>Von der ersten Frage bis zur fertigen Anlage</h2>
-      <p class="lead">Sie haben einen Ansprechpartner für die Beratung – ausgeführt wird die Anlage vom Fachbetrieb.</p>
-      <div class="schritte">
-        <div class="schritt">
-          <div class="nr">1</div>
-          <h3>Beratung bei Ihnen</h3>
-          <p>Wir sehen uns Haus, Heizung und Dach vor Ort an und rechnen mit Ihren echten Zahlen, was sich lohnt.</p>
-        </div>
-        <div class="schritt">
-          <div class="nr">2</div>
-          <h3>Angebot vom Fachbetrieb</h3>
-          <p>Planung und Angebot kommen vom Partnerbetrieb, der die Anlage später auch einbaut.</p>
-        </div>
-        <div class="schritt">
-          <div class="nr">3</div>
-          <h3>Förderung im Blick</h3>
-          <p>Wir zeigen Ihnen, welche Förderung für Ihr Vorhaben infrage kommt und was Sie dafür tun müssen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block soft" id="partner">
-    <div class="container">
-      <span class="eyebrow">Unsere Partner</span>
-      <h2>Fachbetriebe, mit denen wir zusammenarbeiten</h2>
-      <p class="lead">Je nach Vorhaben bringen wir Sie mit dem passenden Partner zusammen.</p>
-      <div class="partner">
-        <div class="karte">
-          <span class="tag">Heizung · Sanitär · Wärmepumpe</span>
-          <h3>GTAW</h3>
-          <p>Gebäudetechnik A. Weishäupl – Meisterbetrieb aus Deggendorf für Heizung, Sanitär und Wärmepumpen.</p>
-          <a class="mehr" href="https://sanitaer-heizung-deggendorf.de/">sanitaer-heizung-deggendorf.de →</a>
-        </div>
-        <div class="karte">
-          <span class="tag">Photovoltaik</span>
-          <h3>SOMV Project</h3>
-          <p>Planung und Montage von Photovoltaikanlagen – mit Speicher, Wallbox und Energiemanagement auf Wunsch.</p>
-          <a class="mehr" href="https://somv-project.de/">somv-project.de →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="hersteller">
-    <div class="container">
-      <span class="eyebrow">Hersteller</span>
-      <h2>Markengeräte, mit denen unsere Partner arbeiten</h2>
-      <p class="lead">Unsere Partnerbetriebe arbeiten mit Geräten bekannter Hersteller – welches Gerät zu Ihrem Haus passt, klären wir in der Beratung.</p>
-      <div class="hersteller">
-        <div class="gruppe"><h3>Wärmepumpe &amp; Heizung</h3><ul><li>Viessmann</li><li>Buderus</li><li>Bosch</li><li>Vaillant</li><li>Wolf</li><li>Weishaupt</li><li>Brötje</li><li>alpha innotec</li><li>Waterkotte</li><li>Daikin</li><li>Mitsubishi Electric</li><li>Panasonic</li><li>Remko</li><li>Lambda</li></ul></div>
-        <div class="gruppe"><h3>PV-Module</h3><ul><li>Meyer Burger</li><li>Heckert Solar</li><li>Solar Fabrik</li><li>Bauer Solar</li><li>Luxor Solar</li><li>Winaico</li><li>IBC Solar</li><li>Q Cells</li><li>Longi</li><li>Jinko Solar</li><li>JA Solar</li><li>Trina Solar</li><li>Aiko</li><li>Apex Solar</li><li>Jonsol</li></ul></div>
-        <div class="gruppe"><h3>Wechselrichter &amp; Speicher</h3><ul><li>SMA</li><li>Fronius</li><li>SolarEdge</li><li>Enphase</li><li>Huawei</li><li>Sungrow</li><li>GoodWe</li><li>Growatt</li><li>Solax</li><li>FoxESS</li><li>Alpha ESS</li><li>E3/DC</li><li>Fenecon</li><li>RCT Power</li><li>Anker Solix</li><li>EcoFlow</li></ul></div>
-        <div class="gruppe"><h3>Wallbox</h3><ul><li>Mennekes</li><li>KEBA</li><li>ABL</li><li>Heidelberg</li><li>go-e</li><li>Easee</li><li>Elli</li></ul></div>
-      </div>
-      <p class="hinweis">Die genannten Hersteller sind keine Vertragspartner der Pilsner Vertriebs GmbH. Ihre Produkte werden von unseren Partnerbetrieben eingesetzt. Markennamen gehören den jeweiligen Inhabern.</p>
-    </div>
-  </section>
-
-  <section class="block soft" id="kontakt">
-    <div class="container kontakt">
-      <div>
-        <span class="eyebrow">Kontakt</span>
-        <h2>Sprechen wir über Ihr Vorhaben</h2>
-        <p class="lead">Schreiben Sie uns kurz, worum es geht – wir melden uns bei Ihnen.</p>
-        <div class="kontakt-liste">
-          <div><span>Telefon</span><a href="tel:+4999140227560">0991 40227560</a></div>
-          <div><span>E-Mail</span><a href="mailto:info@pilsner-vertrieb.de">info@pilsner-vertrieb.de</a></div>
-          <div><span>Adresse</span><b>Pilsner Vertriebs GmbH<br>Detterstraße 38, 94469 Deggendorf</b></div>
-        </div>
-        <p class="digital">Webseiten und Social Media für Handwerksbetriebe? Dafür gibt es <a href="https://pilsner-digital.de/">Pilsner Digital</a>.</p>
-      </div>
-      <form class="anfrage" id="anfrage" novalidate>
-        <label>Vorname<input name="vorname" autocomplete="given-name" required></label>
-        <label>Nachname<input name="nachname" autocomplete="family-name" required></label>
-        <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
-        <label>E-Mail<input name="email" type="email" autocomplete="email"></label>
-        <label>PLZ<input name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" required></label>
-        <label>Interesse
-          <select name="interesse">
-            <option>Wärmepumpe</option><option>Photovoltaik</option><option>Speicher &amp; Wallbox</option><option>Mehreres / noch offen</option>
-          </select>
-        </label>
-        <label class="voll">Nachricht (optional)<textarea name="nachricht" maxlength="2000"></textarea></label>
-        <label class="hp" aria-hidden="true">Firma<input name="firma" tabindex="-1" autocomplete="off"></label>
-        <label class="check voll"><input type="checkbox" name="einwilligung" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und dafür an einen Partner-Fachbetrieb weitergegeben werden. Mehr in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</span></label>
-        <div class="voll"><button type="submit" class="btn btn-primary">Anfrage senden</button></div>
-        <p class="meldung voll" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container">
-    © 2026 Pilsner Vertriebs GmbH &nbsp;·&nbsp;
-    <a href="/impressum.html">Impressum</a> &nbsp;·&nbsp;
-    <a href="/datenschutz.html">Datenschutz</a> &nbsp;·&nbsp;
-    <a href="#" data-consent-open>Cookie-Einstellungen</a> &nbsp;·&nbsp;
-    <a href="https://pilsner-digital.de/">Website: Pilsner Digital</a>
   </div>
-</footer>
-
-<script>
-(function(){
-  var f = document.getElementById('anfrage'), m = f.querySelector('.meldung'), geladen = Date.now();
-  var ZIEL = 'https://crm.pilsner-vertrieb.de/api/eingang';
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    var d = Object.fromEntries(new FormData(f));
-    m.className = 'meldung voll';
-    if (!d.vorname || !d.nachname || !d.telefon || !/^\d{5}$/.test(d.plz || '')) { m.textContent = 'Bitte Name, Telefon und eine 5-stellige PLZ angeben.'; m.classList.add('fehler'); return; }
-    if (!d.einwilligung) { m.textContent = 'Bitte der Speicherung Ihrer Angaben zustimmen.'; m.classList.add('fehler'); return; }
-    var b = f.querySelector('button'); b.disabled = true; b.textContent = 'Wird gesendet …';
-    fetch(ZIEL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign(d, { seite: 'pilsner-vertrieb.de', geladen: geladen })) })
-      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok) throw (j.error || 0); }); })
-      .then(function(){ f.reset(); m.textContent = 'Danke! Wir melden uns bei Ihnen.'; m.classList.add('ok'); })
-      .catch(function(e){ m.textContent = (typeof e === 'string' ? e + ' ' : 'Das hat leider nicht geklappt. ') + 'Sie erreichen uns auch telefonisch: 0991 40227560.'; m.classList.add('fehler'); })
-      .finally(function(){ b.disabled = false; b.textContent = 'Anfrage senden'; });
-  });
-})();
-</script>
-
+</main>
+<footer>© 2026 Pilsner Vertriebs GmbH · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
 </body>
 </html>
