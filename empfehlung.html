@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empfehlung – Pilsner Vertriebs GmbH</title>
+<link rel="icon" type="image/png" href="/logo-icon.png">
+<!-- Ziel des QR-Codes im Beratungsprotokoll (PV-Beratung, seit 17.11.2026).
+     ?c=<Code> = Anfang der Kunden-id dessen, der empfohlen hat – kein Name in der Adresse.
+     Die Anfrage geht wie das Startseiten-Formular an crm.pilsner-vertrieb.de/api/eingang. -->
+<meta name="robots" content="noindex, nofollow">
+<style>
+@font-face { font-family: 'Inter'; src: url('/fonts/inter.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Source Serif 4'; src: url('/fonts/sourceserif4.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+:root { --bg:#FFFFFF; --bg-soft:#F8F9FB; --ink:#11192C; --ink-2:#495569; --line:#DEE3EC; --primary:#1E5BBF; --primary-deep:#0A2B6B; --ok:#0B7E56; --rot:#B42318; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-soft); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
+a { color:var(--primary); }
+header { background:#fff; border-bottom:1px solid var(--line); }
+.wrap { max-width:720px; margin:0 auto; padding:0 16px; }
+.nav { padding:16px 0; }
+.nav img { height:52px; width:auto; display:block; }
+h1 { font-family:'Source Serif 4',serif; font-size:clamp(30px,5vw,42px); font-weight:500; line-height:1.15; letter-spacing:-.02em; margin:40px 0 12px; }
+.lead { color:var(--ink-2); font-size:17px; margin-bottom:24px; }
+.punkte { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:24px; }
+.punkte div { background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px; font-size:14px; color:var(--ink-2); }
+.punkte b { display:block; color:var(--ink); font-size:15px; }
+form { background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+form .voll { grid-column:1/-1; }
+label { display:flex; flex-direction:column; gap:6px; font-size:13px; font-weight:600; color:var(--ink-2); }
+input, select, textarea { font:inherit; font-size:16px; font-weight:400; color:var(--ink); border:1px solid var(--line); border-radius:10px; padding:11px 12px; background:#fff; min-height:46px; }
+textarea { min-height:96px; resize:vertical; }
+input:focus, select:focus, textarea:focus { outline:2px solid var(--primary); outline-offset:1px; border-color:var(--primary); }
+.check { flex-direction:row; align-items:flex-start; gap:10px; font-weight:400; font-size:14px; }
+.check input { min-height:0; width:20px; height:20px; margin-top:2px; flex:none; }
+.hp { position:absolute; left:-9999px; }
+button { border:none; cursor:pointer; font:inherit; font-weight:600; background:var(--primary); color:#fff; border-radius:10px; padding:14px 22px; min-height:48px; width:100%; }
+button:disabled { opacity:.6; }
+.meldung { font-size:15px; }
+.meldung.ok { color:var(--ok); font-weight:600; }
+.meldung.fehler { color:var(--rot); }
+footer { color:var(--ink-2); font-size:13px; padding:32px 0 40px; }
+@media (max-width:640px) { form, .punkte { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a href="/"><img src="/logo-breit.png" alt="Pilsner Vertriebs GmbH"></a></div></header>
+<main class="wrap">
+  <h1>Ihnen wurde Solarstrom empfohlen</h1>
+  <p class="lead">Jemand, den Sie kennen, hat seine Photovoltaik-Anlage mit uns geplant – und denkt, das könnte auch für Sie passen.
+    Hinterlassen Sie Ihre Nummer, wir melden uns für ein unverbindliches Gespräch.</p>
+  <div class="punkte">
+    <div><b>Unverbindlich</b>Erstes Gespräch und Auslegung kosten nichts.</div>
+    <div><b>Vor Ort</b>Beratung bei Ihnen zu Hause, mit Ihren Zahlen.</div>
+    <div><b>Aus der Region</b>Montage durch Meisterbetriebe.</div>
+  </div>
+  <form id="anfrage" novalidate>
+    <label>Vorname<input name="vorname" autocomplete="given-name" required></label>
+    <label>Nachname<input name="nachname" autocomplete="family-name" required></label>
+    <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
+    <label>E-Mail (optional)<input name="email" type="email" autocomplete="email"></label>
+    <label>PLZ<input name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" required></label>
+    <label>Interesse
+      <select name="interesse"><option>Photovoltaik</option><option>Speicher &amp; Wallbox</option><option>Wärmepumpe</option><option>Mehreres / noch offen</option></select>
+    </label>
+    <label class="voll">Wer hat uns empfohlen? (optional)<input name="empfohlen_von" maxlength="120"></label>
+    <label class="voll">Nachricht (optional)<textarea name="nachricht" maxlength="1500"></textarea></label>
+    <label class="hp" aria-hidden="true">Firma<input name="firma" tabindex="-1" autocomplete="off"></label>
+    <label class="check voll"><input type="checkbox" name="einwilligung" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und dafür an einen Partner-Fachbetrieb weitergegeben werden. Mehr in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</span></label>
+    <div class="voll"><button type="submit">Rückruf anfordern</button></div>
+    <p class="meldung voll" role="status" aria-live="polite"></p>
+  </form>
+  <footer>© 2026 Pilsner Vertriebs GmbH · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a> · Telefon <a href="tel:+4999140227560">0991 40227560</a></footer>
+</main>
+<script>
+(function(){
+  var f = document.getElementById('anfrage'), m = f.querySelector('.meldung'), geladen = Date.now();
+  var ZIEL = 'https://crm.pilsner-vertrieb.de/api/eingang';
+  var code = (new URLSearchParams(location.search).get('c') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 12);
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = Object.fromEntries(new FormData(f));
+    m.className = 'meldung voll';
+    if (!d.vorname || !d.nachname || !d.telefon || !/^\d{5}$/.test(d.plz || '')) { m.textContent = 'Bitte Name, Telefon und eine 5-stellige PLZ angeben.'; m.classList.add('fehler'); return; }
+    if (!d.einwilligung) { m.textContent = 'Bitte der Speicherung Ihrer Angaben zustimmen.'; m.classList.add('fehler'); return; }
+    var text = [d.empfohlen_von ? 'Empfohlen von: ' + d.empfohlen_von : '', d.nachricht || ''].filter(Boolean).join('\n');
+    var body = { vorname: d.vorname, nachname: d.nachname, telefon: d.telefon, email: d.email, plz: d.plz, interesse: d.interesse,
+      nachricht: text, firma: d.firma, einwilligung: d.einwilligung, geladen: geladen,
+      seite: 'Empfehlung' + (code ? ' (Code ' + code + ')' : '') };
+    var b = f.querySelector('button'); b.disabled = true; b.textContent = 'Wird gesendet …';
+    fetch(ZIEL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok) throw (j.error || 0); }); })
+      .then(function(){ f.reset(); m.textContent = 'Danke! Wir melden uns bei Ihnen.'; m.classList.add('ok'); })
+      .catch(function(e){ m.textContent = (typeof e === 'string' ? e + ' ' : 'Das hat leider nicht geklappt. ') + 'Sie erreichen uns auch telefonisch: 0991 40227560.'; m.classList.add('fehler'); })
+      .finally(function(){ b.disabled = false; b.textContent = 'Rückruf anfordern'; });
+  });
+})();
+</script>
+</body>
+</html>
